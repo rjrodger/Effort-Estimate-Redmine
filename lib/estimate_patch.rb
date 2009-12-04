@@ -24,13 +24,7 @@ module Estimate
           if x.custom_field_id == effort_field_id
             effort = x.value
             unless effort == "" || effort == nil
-              self.estimated_hours = case effort
-                when "Minimal (0-2 hrs)" then 2
-                when "Low (2-5 hrs)" then 5
-                when "Medium (5-10 hrs)" then 10
-                when "High (10-20 hrs)" then 20
-                when "Extra High (20+ hrs)" then 50
-              end
+              self.estimated_hours = Integer( /.*\((\d+)h\)/.match( effort )[1] )
             end
           end
         end

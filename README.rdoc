@@ -5,15 +5,20 @@ Installation:
 
 Copy folder to vendor/plugins in your redmine directory.
 
-Assumptions:
+Create a custom Issues field using the Administration panel. Call the field "Effort", and make it a list field.
+Values *must* have the format: Description (Xh), where X is an integer number of hours. 
 
-The custom effort field already exists in the custom_fields section of the admin
-panel and is called "Effort".
+For example:
+Minor (2h)
+Half (4h)
+Single (8h)
+Double (16h)
+Triple (24h)
 
-It should be set up with the following values:
+The estimated hours are then taken from this value.
 
-Minimal (0-2 hrs)
-Low (2-5 hrs) 
-Medium (5-10 hrs) 
-High (10-20 hrs) 
-Extra High (20+ hrs)
+
+Credits:
+
+Original version by http://www.3months.com/
+
